@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Flask Demo</title>
+    </head>
+    <body>
+        {% if request.host == '127.0.0.1:5001' %}
+        {% include 'a.html' %}
+        {% elif request.host == 'localhost:5001' %}
+        {% include 'a.html' %}
+        {% elif request.host == '127.0.0.1:5002' %}
+        {% include 'b.html' %}
+        {% elif request.host == 'localhost:5002' %}
+        {% include 'b.html' %}
+        {% elif request.host == '127.0.0.1:5003' %}
+        {% include 'c.html' %}
+        {% elif request.host == 'localhost:5003' %}
+        {% include 'c.html' %}
+        {% else %}
+        {% include 'd.html' %}
+        {% endif %}
+    </body>
+</html>
